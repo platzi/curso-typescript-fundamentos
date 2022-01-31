@@ -1,20 +1,20 @@
 //@ts-check
 
-(()=> {
+(async ()=> {
   const myCart = [];
   const products = [];
   const limit = 2;
 
   async function getProducts() {
     const rta = await fetch('http://api.escuelajs.co/api/v1/products', {
-      mehtod: 'GET'
+      method: 'GET'
     });
-    const data = await rta.parseJson();
+    const data = await rta.json();
     products.concat(data);
   }
   function getTotal() {
     const total = 0;
-    for (const i = 0; i < products.length(); i++) {
+    for (let i = 0; i < products.length; i++) {
       total += products[i].prize;
     }
     return total;
