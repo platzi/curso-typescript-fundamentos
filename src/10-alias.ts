@@ -1,22 +1,21 @@
-(() => {
-  // alias type
-  type UserId = string | number;
-  let userId: UserId;
+(()=>{
+  type UserID = string | number;
+  let userId: UserID;
 
-  // literal type
+  // Literal types
   type Sizes = 'S' | 'M' | 'L' | 'XL';
   let shirtSize: Sizes;
+  shirtSize = 'M';
   shirtSize = 'L';
-  shirtSize = 'M';
   shirtSize = 'XL';
-  shirtSize = 'M';
+  // shirtSize = 's';
 
-  function greeting(myText: UserId, size: Sizes) {
-    if (typeof myText === 'string') {
-      console.log(`string ${myText.toLowerCase()}`);
+  function greeting(userId: UserID, size: Sizes) {
+    if (typeof userId === 'string') {
+      console.log(`string ${userId.toLowerCase()}`);
     }
-  }
+   }
+   greeting(1111, 'S');
+   greeting('1111', 'XL');
 
-  greeting(111, 'M');
-  greeting('111', 'XL');
 })();
